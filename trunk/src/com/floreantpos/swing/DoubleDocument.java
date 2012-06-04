@@ -9,6 +9,8 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
+import com.floreantpos.main.Application;
+
 public class DoubleDocument extends PlainDocument {
 
 	/**
@@ -24,7 +26,7 @@ public class DoubleDocument extends PlainDocument {
 		value = value + str;
 		
 		try {
-			Double.parseDouble(value);
+			Application.parseNumber(value);
 		}catch(Exception x) {
 			Toolkit.getDefaultToolkit().beep();
 			return;

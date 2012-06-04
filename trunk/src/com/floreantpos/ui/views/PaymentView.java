@@ -115,8 +115,8 @@ public abstract class PaymentView extends JPanel {
 	
 	public void settleTickets(double tenderedAmount, double gratuityAmount, PosTransaction posTransaction, String cardType, String cardAuthorizationCode) {
 		try {
-			double totalAmount = Double.parseDouble(Application.formatNumber(getTotalAmount()));
-			double dueAmountBeforePaid = Double.parseDouble(Application.formatNumber(getDueAmount()));
+			double totalAmount = getTotalAmount();
+			double dueAmountBeforePaid = getDueAmount();
 			
 			List<Ticket> ticketsToSettle = settleTicketView.getTicketsToSettle();
 			
@@ -159,8 +159,8 @@ public abstract class PaymentView extends JPanel {
 				}
 			}*/
 			
-			double paidAmount = Double.parseDouble(Application.formatNumber(getPaidAmount()));
-			double dueAmount = Double.parseDouble(Application.formatNumber(getDueAmount()));
+			double paidAmount = getPaidAmount();
+			double dueAmount = getDueAmount();
 			
 			TransactionCompletionDialog dialog = TransactionCompletionDialog.getInstance();
 			dialog.setTickets(ticketsToSettle);

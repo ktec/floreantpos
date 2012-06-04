@@ -6,6 +6,8 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -282,6 +284,16 @@ public class Application {
 			return "0.00";
 		}
 		return value;
+	}
+
+	public static Double parseNumber(String number) throws NumberFormatException {
+	  NumberFormat numberFormat = NumberFormat.getNumberInstance(); 
+	  ParsePosition parsePosition = new ParsePosition(0);
+	  Number n = numberFormat.parse(number, parsePosition);
+	  if(n == null || parsePosition.getIndex() != number.length()) {
+	    throw new NumberFormatException();
+	  }
+	  return n.doubleValue();
 	}
 
 	public static String getTitle() {

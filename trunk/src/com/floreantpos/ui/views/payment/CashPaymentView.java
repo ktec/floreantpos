@@ -233,7 +233,7 @@ public class CashPaymentView extends PaymentView {
 	}//GEN-LAST:event_btnChangePaymentActionPerformed
 
 	private void doFinish(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doFinish
-		double tenderedAmount = Double.parseDouble(tfAmountTendered.getText());
+		double tenderedAmount = Application.parseNumber(tfAmountTendered.getText());
 		settleTickets(tenderedAmount, 0, new CashTransaction(), null, null);
 	}//GEN-LAST:event_doFinish
 

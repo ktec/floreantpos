@@ -21,6 +21,7 @@ import net.miginfocom.swing.MigLayout;
 import org.jdesktop.swingx.JXDatePicker;
 
 import com.floreantpos.POSConstants;
+import com.floreantpos.main.Application;
 import com.floreantpos.model.DrawerPullReport;
 import com.floreantpos.model.dao.DrawerPullReportDAO;
 import com.floreantpos.model.util.DateUtil;
@@ -86,7 +87,7 @@ public class DrawerPullReportExplorer extends TransparentPanel {
 					}
 					double amount = 0;
 					try {
-						amount = Double.parseDouble(amountString);
+						amount = Application.parseNumber(amountString);
 					}catch(Exception x) {
 						JOptionPane.showMessageDialog(DrawerPullReportExplorer.this, com.floreantpos.POSConstants.INVALID_AMOUNT, com.floreantpos.POSConstants.MDS_POS, JOptionPane.ERROR_MESSAGE);
 						return;
