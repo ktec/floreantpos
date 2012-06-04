@@ -9,3 +9,7 @@ Changes in version 1.1
 7. Fixed Menu Usage Report
 8. Fixed Server Productivity Report
 9. Fixed Journal Report
+
+Changes in version 1.2.1
+
+1. Added Number Format patch to enable transactions larger than 999
